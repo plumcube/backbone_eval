@@ -1,11 +1,18 @@
 (function($){
 
   var ListView = Backbone.View.extend({
+      
+    //elements
+    
     el: $('body'), // attaches 'this.el' to an existing element.
 
     events: {
       'click button#add': 'addItem'  
     },
+    
+    
+    
+    //functions
 
     initialize: function(){
         _.bindAll(this, 'render', 'addItem'); // every function that uses 'this' as the current object should be in here
