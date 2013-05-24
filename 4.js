@@ -13,7 +13,7 @@
     });
     
 
-	var ListView = Backbone.View.extend({
+    var ListView = Backbone.View.extend({
 
 		// elements
 		el : $('body'), // attaches 'this.el' to an existing element.
