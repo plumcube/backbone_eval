@@ -1,4 +1,8 @@
-var Vehicle = Backbone.Model.extend({},
+var Vehicle = Backbone.Model.extend({
+        initialize: function(){
+            console.log("Vehicle created");
+        }
+    },
     {
         summary: function(){
             return 'Vehicles are awesome';
