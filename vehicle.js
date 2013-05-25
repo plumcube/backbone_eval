@@ -1,6 +1,10 @@
 var Vehicle = Backbone.Model.extend({
         initialize: function(){
             console.log("Vehicle created");
+        },
+        
+        asString: function(){
+            return JSON.stringify(this.toJSON());
         }
     },
     {
@@ -10,10 +14,12 @@ var Vehicle = Backbone.Model.extend({
     }
 );
 
-var v1 = new Vehicle();
-var v2 = new Vehicle();
+var car = new Vehicle({
+    brand: 'Mercedes',
+    color: 'red'
+});
 
-v1.prop1 = 'one';
 
-console.log(Vehicle.summary());
-console.log(v2);
+console.log(car);
+console.log(car.toJSON());
+console.log(JSON.stringify(car.toJSON()));
