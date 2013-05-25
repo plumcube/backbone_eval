@@ -15,10 +15,7 @@
         setDimensions : function() {
             this.$el.css({
                 width: this.model.get("width") + "px",
-                height: this.model.get("height") + "px",
-                // border: "4px solid black",
-                // position: "absolute"
-                
+                height: this.model.get("height") + "px"
             });
         },
         
