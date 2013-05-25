@@ -3,28 +3,33 @@
     var Rectangle = Backbone.Model.extend({});
     
     var RectangleView = Backbone.View.extend({
-        tagName : 'div',
-        className : 'rectangle',
+        tagName: 'div',
+        className: 'rectangle',
         
-        render : function() {
+        render: function(){
             this.setDimensions();
             this.setPosition();
+            this.setColor();
             return this;
         },
         
-        setDimensions : function() {
+        setDimensions: function(){
             this.$el.css({
                 width: this.model.get("width") + "px",
                 height: this.model.get("height") + "px"
             });
         },
         
-        setPosition: function() {
+        setPosition: function(){
             var position = this.model.get("position");
             this.$el.css({
                 left: position.x,
                 top: position.y
             });
+        },
+        
+        setColor: function(){
+            this.$el.css("background-color", this.model.get("color"));
         }
     });
     
@@ -34,7 +39,8 @@
         position: {
             x: 40, 
             y: 100
-        }
+        },
+        color: "orange"
     });
     
     var mainView = new RectangleView({
