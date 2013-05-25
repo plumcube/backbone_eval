@@ -32,11 +32,11 @@
     });
     
     var rectangle1 = new Rectangle({
-        width: 100,
-        height: 300,
+        width: 200,
+        height: 180,
         position: {
-            x: 20, 
-            y: 10
+            x: 40, 
+            y: 100
         }
     });
     
@@ -45,6 +45,6 @@
     });
     
     console.log(mainView.render().el);
-    //$("div#canvas").append(mainView.render().el);
+    $("div#canvas").append(mainView.render().el);
     
 })();
