@@ -40,21 +40,41 @@
         }
     });
     
-    var rectangle1 = new Rectangle({
-        width: 200,
-        height: 180,
-        position: {
-            x: 40, 
-            y: 100
-        },
-        color: "orange"
+    var models = [
+        new Rectangle({
+            width: 200,
+            height: 180,
+            position: {
+                x: 40, 
+                y: 100
+            },
+            color: "orange"
+        }),
+        new Rectangle({
+            width: 200,
+            height: 40,
+            position: {
+                x: 40, 
+                y: 400
+            },
+            color: "yellow"
+        }),
+        new Rectangle({
+            width: 50,
+            height: 300,
+            position: {
+                x: 250, 
+                y: 120
+            },
+            color: "pink"
+        }),
+    ];
+    
+    console.log(models);
+    
+    _(models).each(function (model){
+        $("div#canvas").append(new RectangleView({model: model}).render().el);
     });
     
-    var mainView = new RectangleView({
-        model: rectangle1
-    });
-    
-    console.log(mainView.render().el);
-    $("div#canvas").append(mainView.render().el);
     
 })();
