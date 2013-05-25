@@ -5,6 +5,9 @@
     var RectangleView = Backbone.View.extend({
         tagName: 'div',
         className: 'rectangle',
+        events: {
+            'click': 'move'
+        },
         
         render: function(){
             this.setDimensions();
@@ -30,6 +33,10 @@
         
         setColor: function(){
             this.$el.css("background-color", this.model.get("color"));
+        },
+        
+        move: function(){
+            this.$el.css("top", this.$el.position().top + 10);
         }
     });
     
