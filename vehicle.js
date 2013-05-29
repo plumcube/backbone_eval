@@ -19,7 +19,8 @@ var car = new Vehicle({
     color: 'red'
 });
 
+var Sedan = Vehicle.extend({});
 
-console.log(car);
-console.log(car.toJSON());
-console.log(JSON.stringify(car.toJSON()));
+var car2 = new Sedan();
+
+console.log(car2.asString());
