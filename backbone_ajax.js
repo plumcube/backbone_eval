@@ -91,6 +91,48 @@ var ListView = Backbone.View.extend({
 // });
 //})(jQuery);
 
-a = {fullname: 'Chris H.'};
-var listView = new ListView(a);
+//a = {fullname: 'Chris H.'};
+//var listView = new ListView(a);
+
+
+
+
+//jsfiddle.net/ynkJE/12
+//http://handlebarsjs.com/
+var source = '<p>Latitude: {{lat}}</p>';
+var compiled = Handlebars.compile(source);
+var rendered = compiled({lat: -27});
+
+console.log(rendered);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
