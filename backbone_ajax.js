@@ -13,18 +13,18 @@ Backbone.sync = function (method, model, success, error) {
 };
 var Item = Backbone.Model.extend({
     defaults: {
-        'firstname': 'Ben',
-            'lastname': 'Ng',
-            'fullname': 'Ben Ng',
-            'rate': '$500',
-            'expertise': 'The Internet',
-            'location': 'NY, NY',
-            'status': '',
-            'responsetime': '',
-            'translator': false,
-            'confirmation': true,
-            'rating': '',
-            'pmrating': ''
+        'firstname': 'TEST',
+        'lastname': 'Ng',
+        'fullname': 'Ben Ng',
+        'rate': '$500',
+        'expertise': 'The Internet',
+        'location': 'NY, NY',
+        'status': '',
+        'responsetime': '',
+        'translator': false,
+        'confirmation': true,
+        'rating': '',
+        'pmrating': ''
     }
 });
 var List = Backbone.Collection.extend({
@@ -95,6 +95,6 @@ var ListView = Backbone.View.extend({
 // });
 //})(jQuery);
 
-a = {firstname: 'Chi Hang'};
+a = {fullname: 'Chris H.'};
 var listView = new ListView(a);
 
