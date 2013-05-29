@@ -1,5 +1,4 @@
 // **This example illustrates the declaration and instantiation of a minimalist View.**
-// (function($){
 var data = {
     'list': {
         'html': '<button id="add">Add Item to List</button><table id="container"><tr><th>Name</th><th>Status</th><th>Response Time</th><th>Rate</th></tr></table>'
@@ -50,6 +49,7 @@ var ItemView = Backbone.View.extend({
         this.model.destroy();
     }
 });
+
 // **ListView class**: Our main app view.
 var ListView = Backbone.View.extend({
     template: _.template(data.list.html),
@@ -57,7 +57,6 @@ var ListView = Backbone.View.extend({
         'click button#add': 'addItem'
     },
     el: $('body'), // attaches `this.el` to an existing element.
-    // `initialize()`: Automatically called upon instantiation. Where you make all types of bindings, _excluding_ UI events, such as clicks, etc.
     initialize: function (a) {
         _.bindAll(this, 'render', 'addItem', 'appendItem'); // fixes loss of context for 'this' within methods
         this.collection = new List();
@@ -65,7 +64,6 @@ var ListView = Backbone.View.extend({
         this.collection.add(a);
         this.render(); // not all views are self-rendering. This one is.
     },
-    // `render()`: Function in charge of rendering the entire view in `this.el`. Needs to be manually called by the user.
     render: function () {
         var self = this;
         $(this.el).html(this.template());
@@ -73,12 +71,10 @@ var ListView = Backbone.View.extend({
             self.appendItem(item);
         }, this);
     },
-    // addItem()
     addItem: function () {
         var item = new Item();
         this.collection.add(item); // add item to collection; view is updated via event 'add'
     },
-    // appendItem()
     appendItem: function (item) {
         var itemView = new ItemView({
             model: item
